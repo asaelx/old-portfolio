@@ -26,6 +26,7 @@ body {
   box-shadow: 0 0 0 0.21429em rgba(255, 255, 255, 0.3);
   float: left;
   height: 100%;
+  overflow: hidden;
   text-align: center;
   width: 15.71429em; }
   .sidebar .hero {
@@ -104,11 +105,32 @@ body {
       font-family: "Lato", "Helvetica", Arial, sans-serif;
       font-size: 0.85714em;
       font-weight: 700;
+      padding-bottom: 1em;
       text-align: left;
       text-transform: uppercase; }
       .sidebar .instagram .title .fa {
         color: #1ABC9C;
         margin-right: 0.35714em; }
+    .sidebar .instagram #instafeed .option {
+      display: inline-block;
+      margin: 0 7% 7% 0; }
+      .sidebar .instagram #instafeed .option .link {
+        background: #1ABC9C;
+        border-radius: 0.21429em;
+        display: block;
+        height: 3.85714em;
+        width: 3.85714em;
+        overflow: hidden;
+        transition: all 0.1s ease; }
+        .sidebar .instagram #instafeed .option .link .img {
+          height: 100%;
+          vertical-align: middle;
+          width: 100%; }
+        .sidebar .instagram #instafeed .option .link:hover {
+          transform: scale(1.05);
+          transition: all 0.1s ease; }
+      .sidebar .instagram #instafeed .option:nth-child(3n+3) {
+        margin-right: 0; }
 
 /* Content */
 #content {

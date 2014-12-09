@@ -31,7 +31,7 @@
     </nav><!-- /nav -->
     <div class="instagram">
         <h3 class="title"><i class="fa fa-instagram"></i>Instagram</h3>
-        <div class="instagram_photos"></div><!-- /instagram_photos -->
+        <ul id="instafeed"></ul><!-- /instafeed -->
     </div>
     <footer>
         Diseño y desarrollo por Asael Jaimes
