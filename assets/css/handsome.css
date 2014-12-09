@@ -21,61 +21,63 @@ body {
   clear: both; }
 
 /* Sidebar */
-.sidebar {
+#sidebar {
   background: #ECF0F1;
   box-shadow: 0 0 0 0.21429em rgba(255, 255, 255, 0.3);
   float: left;
   height: 100%;
   overflow: hidden;
+  position: relative;
   text-align: center;
-  width: 15.71429em; }
-  .sidebar .hero {
+  width: 15.71429em;
+  z-index: 2; }
+  #sidebar .hero {
     background: #34495E;
     border-bottom: 0.21429em solid #1ABC9C;
     color: #FFFFFF;
     line-height: 1.5;
     padding: 2.14286em;
     position: relative; }
-    .sidebar .hero .hero_bg {
+    #sidebar .hero .hero_bg {
       height: 100%;
       left: 0;
       opacity: 0.15;
       position: absolute;
       top: 0;
       width: auto; }
-      .sidebar .hero .hero_bg .img {
+      #sidebar .hero .hero_bg .img {
         height: 100%;
         position: relative;
         vertical-align: middle;
         width: 100%;
         z-index: 1; }
-    .sidebar .hero .content {
+    #sidebar .hero .content {
       position: relative;
       z-index: 2; }
-      .sidebar .hero .content .photo {
+      #sidebar .hero .content .photo {
         display: inline-block;
         border: 0.21429em solid #1ABC9C;
         border-radius: 50%;
         overflow: hidden; }
-      .sidebar .hero .content .name {
+      #sidebar .hero .content .name {
         font-size: 1.14286em;
         font-weight: 700; }
-      .sidebar .hero .content .location {
+      #sidebar .hero .content .location {
         font-size: 0.92857em;
         font-weight: 400; }
-        .sidebar .hero .content .location .fa {
+        #sidebar .hero .content .location .fa {
           color: #1ABC9C; }
-      .sidebar .hero .content .bio {
+      #sidebar .hero .content .bio {
         font-family: "Lato", "Helvetica", Arial, sans-serif;
         font-size: 0.92857em;
         font-style: italic;
         margin-top: 1em; }
-  .sidebar nav {
+  #sidebar nav {
     padding: 1.42857em 0;
     width: 100%; }
-    .sidebar nav .ul {
+    #sidebar nav .ul {
       text-align: left; }
-      .sidebar nav .ul .option .link {
+      #sidebar nav .ul .option .link {
         color: #1ABC9C;
         display: block;
         border-bottom: 0.14286em solid transparent;
@@ -87,34 +89,36 @@ body {
         text-decoration: none;
         text-transform: uppercase;
         transition: all 0.3s ease; }
-        .sidebar nav .ul .option .link .fa {
+        #sidebar nav .ul .option .link .fa {
           position: absolute;
           right: 1.78571em;
           top: 50%;
           transform: translateY(-50%); }
-        .sidebar nav .ul .option .link.active, .sidebar nav .ul .option .link:hover {
+        #sidebar nav .ul .option .link.active, #sidebar nav .ul .option .link:hover {
           color: #FFFFFF;
           background: #1ABC9C;
           border-bottom: 0.14286em solid #16A085;
           text-indent: 0.71429em;
           transition: all 0.3s ease; }
-  .sidebar .instagram {
+  #sidebar .instagram {
     padding: 0 1.07143em; }
-    .sidebar .instagram .title {
+    #sidebar .instagram .link {
       color: #16A085;
+      text-decoration: none; }
+    #sidebar .instagram .title {
       font-family: "Lato", "Helvetica", Arial, sans-serif;
       font-size: 0.85714em;
       font-weight: 700;
       padding-bottom: 1em;
       text-align: left;
       text-transform: uppercase; }
-      .sidebar .instagram .title .fa {
+      #sidebar .instagram .title .fa {
         color: #1ABC9C;
         margin-right: 0.35714em; }
-    .sidebar .instagram #instafeed .option {
+    #sidebar .instagram #instafeed .option {
       display: inline-block;
       margin: 0 7% 7% 0; }
-      .sidebar .instagram #instafeed .option .link {
+      #sidebar .instagram #instafeed .option .link {
         background: #1ABC9C;
         border-radius: 0.21429em;
         display: block;
@@ -122,14 +126,14 @@ body {
         width: 3.85714em;
         overflow: hidden;
         transition: all 0.1s ease; }
-        .sidebar .instagram #instafeed .option .link .img {
+        #sidebar .instagram #instafeed .option .link .img {
           height: 100%;
           vertical-align: middle;
           width: 100%; }
-        .sidebar .instagram #instafeed .option .link:hover {
+        #sidebar .instagram #instafeed .option .link:hover {
           transform: scale(1.05);
           transition: all 0.1s ease; }
-      .sidebar .instagram #instafeed .option:nth-child(3n+3) {
+      #sidebar .instagram #instafeed .option:nth-child(3n+3) {
         margin-right: 0; }
 
 /* Content */
@@ -138,7 +142,9 @@ body {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
-  width: calc(100% - 15.71429em); }
+  position: relative;
+  width: calc(100% - 15.71429em);
+  z-index: 1; }
 
 /* Projects */
 .projects {
@@ -202,6 +208,67 @@ body {
       opacity: 0.2;
       transform: scale(1.2);
       transition: all 0.3s ease; }
+
+/* Article */
+.article .hero_cover {
+  background: #2C3E50;
+  border-bottom: 0.21429em solid #1ABC9C;
+  height: 28.57143em;
+  position: relative;
+  width: 100%; }
+  .article .hero_cover .hero_img {
+    height: 100%;
+    left: 0;
+    opacity: 0.5;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%; }
+    .article .hero_cover .hero_img .img {
+      transform: translateY(-35%);
+      width: 100%; }
+    .article .hero_cover .hero_img:after {
+      background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, #34495e 100%);
+      content: '';
+      height: 50%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%; }
+  .article .hero_cover .center {
+    height: 100%;
+    position: relative; }
+    .article .hero_cover .center .header {
+      bottom: 2.14286em;
+      line-height: 1.5;
+      position: absolute;
+      right: 0;
+      text-align: right; }
+      .article .hero_cover .center .header .title {
+        color: #FFFFFF;
+        font-size: 2.57143em;
+        font-weight: 700; }
+      .article .hero_cover .center .header .details {
+        color: #1ABC9C;
+        font-family: "Lato", "Helvetica", Arial, sans-serif;
+        font-size: 0.85714em;
+        font-style: italic;
+        font-weight: 700; }
+.article .content {
+  margin: 2em auto; }
+  .article .content p {
+    color: #34495E;
+    font-size: 1.28571em;
+    font-weight: 700;
+    line-height: 2em; }
+  .article .content img {
+    border-radius: 0.21429em;
+    margin: 2em 0;
+    width: 100%; }
+
+.center {
+  margin: 0 auto;
+  width: 51.42857em; }
 
 /* Footer */
 footer {

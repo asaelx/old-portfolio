@@ -12,3 +12,5 @@
 */
 
 Route::get('/', 'ProjectsController@index');
+
+Route::get('article', 'ArticlesController@index');

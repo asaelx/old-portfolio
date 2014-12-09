@@ -1,6 +1,6 @@
 
 
-<aside class="sidebar">
+<aside id="sidebar">
     <div class="hero">
         <div class="hero_bg">
             {{HTML::image('assets/img/hero_bg.jpg', 'asaelx background', ['class' => 'img'])}}
@@ -30,7 +30,7 @@
         </ul>
     </nav><!-- /nav -->
     <div class="instagram">
-        <h3 class="title"><i class="fa fa-instagram"></i>Instagram</h3>
+        <h3 class="title"><a href="//instagram.com/asaelx" target="_blank" class="link"><i class="fa fa-instagram"></i>Instagram</a></h3>
         <ul id="instafeed"></ul><!-- /instafeed -->
     </div>
     <footer>
