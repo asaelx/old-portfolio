@@ -48,6 +48,7 @@ $sidebar_width: em(220px);
 .sidebar{
     background: $light;
     box-shadow: 0 0 0 em(3px) rgba($white, 0.3);
+    float: left;
     height: 100%;
     text-align: center;
     width: $sidebar_width;
@@ -154,6 +155,94 @@ $sidebar_width: em(220px);
             }
         }
     }//Instagram
+}
+
+/* Content */
+
+#content{
+    float: right;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: calc(100% - #{$sidebar_width});
+}
+
+/* Projects */
+
+.projects{
+    padding: em(30px);
+    .project{
+        background: $dark;
+        float: left;
+        height: em(219px);
+        overflow: hidden;
+        position: relative;
+        transition: all 0.3s ease;
+        width: em(219px);
+        .link{
+            color: $white;
+            display: block;
+            height: 100%;
+            text-decoration: none;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+        .project_img{
+            left: 0;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            .img{
+                width: 100%;
+            }
+        }
+        .content{
+            font-family: $lato;
+            left: 50%;
+            opacity: 0;
+            padding: 0 em(15px);
+            position: absolute;
+            text-align: center;
+            top: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            width: 100%;
+            z-index: 2;
+            .title{
+                border-bottom: em(3px) solid $green;
+                display: inline-block;
+                font-weight: 700;
+                margin-bottom: 1em;
+                padding-bottom: em(3px);
+                text-transform: uppercase;
+                transform: translateY((em(-5px)));
+            }
+            .short{
+                font-style: italic;
+                transform: translateY((em(5px)));
+            }
+        }
+        &:hover{
+            .content{
+                opacity: 1;
+                transition: all 0.3s ease;
+                .title{
+                    transform: translateY(0);
+                    transition: all 0.3s ease;
+                }
+                .short{
+                    transform: translateY(0);
+                    transition: all 0.3s ease;
+                }
+            }
+            .project_img{
+                opacity: 0.2;
+                transform: scale(1.2);
+                transition: all 0.3s ease;
+            }
+        }
+    }
 }
 
 /* Footer */

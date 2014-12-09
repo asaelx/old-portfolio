@@ -24,6 +24,7 @@ body {
 .sidebar {
   background: #ECF0F1;
   box-shadow: 0 0 0 0.21429em rgba(255, 255, 255, 0.3);
+  float: left;
   height: 100%;
   text-align: center;
   width: 15.71429em; }
@@ -108,6 +109,77 @@ body {
       .sidebar .instagram .title .fa {
         color: #1ABC9C;
         margin-right: 0.35714em; }
+
+/* Content */
+#content {
+  float: right;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  width: calc(100% - 15.71429em); }
+
+/* Projects */
+.projects {
+  padding: 2.14286em; }
+  .projects .project {
+    background: #34495E;
+    float: left;
+    height: 15.64286em;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+    width: 15.64286em; }
+    .projects .project .link {
+      color: #FFFFFF;
+      display: block;
+      height: 100%;
+      text-decoration: none;
+      width: 100%;
+      transition: all 0.3s ease; }
+    .projects .project .project_img {
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 1; }
+      .projects .project .project_img .img {
+        width: 100%; }
+    .projects .project .content {
+      font-family: "Lato", "Helvetica", Arial, sans-serif;
+      left: 50%;
+      opacity: 0;
+      padding: 0 1.07143em;
+      position: absolute;
+      text-align: center;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 100%;
+      z-index: 2; }
+      .projects .project .content .title {
+        border-bottom: 0.21429em solid #1ABC9C;
+        display: inline-block;
+        font-weight: 700;
+        margin-bottom: 1em;
+        padding-bottom: 0.21429em;
+        text-transform: uppercase;
+        transform: translateY(-0.35714em); }
+      .projects .project .content .short {
+        font-style: italic;
+        transform: translateY(0.35714em); }
+    .projects .project:hover .content {
+      opacity: 1;
+      transition: all 0.3s ease; }
+      .projects .project:hover .content .title {
+        transform: translateY(0);
+        transition: all 0.3s ease; }
+      .projects .project:hover .content .short {
+        transform: translateY(0);
+        transition: all 0.3s ease; }
+    .projects .project:hover .project_img {
+      opacity: 0.2;
+      transform: scale(1.2);
+      transition: all 0.3s ease; }
 
 /* Footer */
 footer {

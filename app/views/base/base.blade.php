@@ -12,6 +12,7 @@
 <body>
 
 @yield('sidebar')
+@yield('content')
 
 </body>
 </html>
