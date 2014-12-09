@@ -4,4 +4,6 @@
     Proyectos
 @stop
 
-@include('base.sidebar', array('current' => 'projects'))
+@section('sidebar')
+    @include('base.sidebar', array('current' => 'projects'))
+@stop

@@ -1,0 +1,168 @@
+/* Colors */
+$dark: #34495E;
+$darker: #2C3E50;
+$green: #1ABC9C;
+$greener: #16A085;
+$light: #ECF0F1;
+$white: #FFFFFF;
+
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,600,500,700);
+$base_font_size: 14px;
+
+$raleway: 'Raleway', 'Helvetica', Arial, sans-serif;
+$lato: 'Lato', 'Helvetica', Arial, sans-serif;
+
+@function em($px, $base: $base_font_size) {
+    @return ($px / $base) * 1em;
+}
+
+/* General */
+
+html,
+body{
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+body{
+    background: $white;
+    color: $green;
+    font-family: $raleway;
+    font-size: $base_font_size;
+}
+
+.clear:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Sidebar */
+
+$sidebar_width: em(220px);
+
+.sidebar{
+    background: $light;
+    box-shadow: 0 0 0 em(3px) rgba($white, 0.3);
+    height: 100%;
+    text-align: center;
+    width: $sidebar_width;
+    .hero{
+        background: $dark;
+        border-bottom: em(3px) solid $green;
+        color: $white;
+        line-height: 1.5;
+        padding: em(30px);
+        position: relative;
+        .hero_bg{
+            height: 100%;
+            left: 0;
+            opacity: 0.15;
+            position: absolute;
+            top: 0;
+            width: auto;
+            .img{
+                height: 100%;
+                position: relative;
+                vertical-align: middle;
+                width: 100%;
+                z-index: 1;
+            }
+        }
+        .content{
+            position: relative;
+            z-index: 2;
+            .photo{
+                display: inline-block;
+                border: em(3px) solid $green;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+            .name{
+                font-size: em(16px);
+                font-weight: 700;
+            }
+            .location{
+                font-size: em(13px);
+                font-weight: 400;
+                .fa{
+                    color: $green;
+                }
+            }
+            .bio{
+                font-family: $lato;
+                font-size: em(13px);
+                font-style: italic;
+                margin-top: 1em;
+            }
+        }
+    }//Hero
+
+    nav{
+        padding: em(20px) 0;
+        width: 100%;
+        .ul{
+            text-align: left;
+            .option{
+                .link{
+                    color: $green;
+                    display: block;
+                    border-bottom: em(2px) solid transparent;
+                    font-style: italic;
+                    font-weight: 700;
+                    margin: em(5px) 0;
+                    padding: em(5px) em(25px);
+                    position: relative;
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    transition: all 0.3s ease;
+                    .fa{
+                        position: absolute;
+                        right: em(25px);
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                    &.active,
+                    &:hover{
+                        color: $white;
+                        background: $green;
+                        border-bottom: em(2px) solid $greener;
+                        text-indent: em(10px);
+                        transition: all 0.3s ease;
+                    }
+                }
+            }
+        }
+    }//Nav
+
+    .instagram{
+        padding: 0 em(15px);
+        .title{
+            color: $greener;
+            font-family: $lato;
+            font-size: em(12px);
+            font-weight: 700;
+            text-align: left;
+            text-transform: uppercase;
+            .fa{
+                color: $green;
+                margin-right: em(5px);
+            }
+        }
+    }//Instagram
+}
+
+/* Footer */
+
+footer{
+    color: $dark;
+    font-family: $lato;
+    font-size: em(12px);
+    font-style: italic;
+    font-weight: 700;
+    margin: em(20px);
+}
