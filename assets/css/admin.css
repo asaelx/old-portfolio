@@ -78,6 +78,25 @@ body {
       right: -0.14286em; }
     #topbar .profile:hover {
       cursor: pointer; }
+      #topbar .profile:hover .nav {
+        background: #ECF0F1;
+        border-radius: 0.21429em;
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        right: -3.85714em;
+        top: 0;
+        z-index: 3; }
+        #topbar .profile:hover .nav .pages .option {
+          padding: 0.57143em; }
+          #topbar .profile:hover .nav .pages .option .link {
+            color: #34495E;
+            text-decoration: none;
+            width: 100%; }
+          #topbar .profile:hover .nav .pages .option:hover {
+            background: #34495E; }
+            #topbar .profile:hover .nav .pages .option:hover .link {
+              color: #FFFFFF; }
   #topbar .btn {
     margin-top: 0.35714em;
     float: right; }

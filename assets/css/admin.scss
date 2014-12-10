@@ -112,6 +112,32 @@ body{
         }
         &:hover{
             cursor: pointer;
+            .nav{
+                background: $gray;
+                border-radius: em(3px);
+                display: block;
+                overflow: hidden;
+                position: absolute;
+                right: em(-54px);
+                top: 0;
+                z-index: 3;
+                .pages{
+                    .option{
+                        padding: em(8px);
+                        .link{
+                            color: $dark;
+                            text-decoration: none;
+                            width: 100%;
+                        }
+                        &:hover{
+                            background: $dark;
+                            .link{
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     .btn{
