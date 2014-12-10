@@ -35,22 +35,83 @@ body {
   text-decoration: none;
   text-transform: uppercase; }
   .btn:hover {
-    cursor: pointer;
-    opacity: 0.8; }
+    cursor: pointer; }
 
 .green-btn {
   background: #1ABC9C; }
+  .green-btn:hover {
+    background: #16A085; }
 
 .blue-btn {
   background: #3498DB; }
+  .blue-btn:hover {
+    background: #2980B9; }
 
 .red-btn {
   background: #E74C3C; }
+  .red-btn:hover {
+    background: #C0392B; }
 
 /* Topbar */
 #topbar {
-  height: 5.35714em; }
+  background: #34495E;
+  padding: 0.57143em 0; }
+  #topbar .profile {
+    float: left;
+    position: relative;
+    top: 50%; }
+    #topbar .profile .photo {
+      border-radius: 50%;
+      display: inline-block;
+      height: 2.42857em;
+      overflow: hidden;
+      width: 2.42857em; }
+      #topbar .profile .photo .img {
+        height: 100%;
+        width: 100%; }
+    #topbar .profile .nav {
+      display: none; }
+    #topbar .profile .fa {
+      color: #FFFFFF;
+      position: relative;
+      top: -0.71429em;
+      right: -0.14286em; }
+    #topbar .profile:hover {
+      cursor: pointer; }
+  #topbar .btn {
+    margin-top: 0.35714em;
+    float: right; }
 
+/* Content */
+#content {
+  padding: 1.78571em 0; }
+  #content .title {
+    font-size: 2.42857em;
+    font-weight: 700;
+    margin-bottom: 0.71429em; }
+
+/* List */
+.list .item {
+  background: #FFFFFF;
+  display: block;
+  padding: 0.71429em;
+  width: 100%; }
+  .list .item:nth-child(odd) {
+    background: #ECF0F1; }
+  .list .item .link {
+    color: #34495E;
+    font-size: 1.28571em;
+    font-weight: 700;
+    text-decoration: none; }
+  .list .item .actions {
+    float: right; }
+    .list .item .actions .options .option {
+      float: left;
+      margin-right: 0.35714em; }
+      .list .item .actions .options .option .btn {
+        font-size: 0.78571em; }
+
+/* Articles */
 /* Login */
 #login {
   padding: 5em;

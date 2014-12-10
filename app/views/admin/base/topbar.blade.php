@@ -1,18 +1,21 @@
 <div id="topbar" class="clear">
-    <div class="profile">
-        <div class="photo">
-            {{HTML::image('assets/img/profile.jpg', 'asaelx')}}
-        </div><!-- /photo -->
-        <nav class="nav">
-            <ul class="pages">
-                <li class="option">
-                    <a href="#" class="link">Articles</a>
-                </li>
-                <li class="option">
-                    <a href="#" class="link">Settings</a>
-                </li>
-            </ul><!-- /pages -->
-        </nav>
-    </div><!-- /profile -->
-    <a href="#" class="btn green-btn">New article</a>
+    <div class="center">
+        <div class="profile">
+            <div class="photo">
+                {{HTML::image('assets/img/profile.jpg', 'asaelx', ['class' => 'img'])}}
+            </div><!-- /photo -->
+            <nav class="nav">
+                <ul class="pages">
+                    <li class="option">
+                        <a href="#" class="link">Articles</a>
+                    </li>
+                    <li class="option">
+                        <a href="#" class="link">Settings</a>
+                    </li>
+                </ul><!-- /pages -->
+            </nav>
+            <i class="fa fa-caret-down"></i>
+        </div><!-- /profile -->
+        <a href="#" class="btn green-btn">New article</a>
+    </div>
 </div><!-- /topbar -->

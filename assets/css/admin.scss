@@ -8,6 +8,8 @@ $reder: #C0392B;
 $dark: #34495E;
 $darker: #2C3E50;
 $white: #FFFFFF;
+$gray: #ECF0F1;
+$grayer: #BDC3C7;
 
 /* Fonts */
 @import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
@@ -58,31 +60,113 @@ body{
     text-transform: uppercase;
     &:hover{
         cursor: pointer;
-        opacity: 0.8;
     }
 }
 
 .green-btn{
     background: $green;
+    &:hover{
+        background: $greener;
+    }
 }
 .blue-btn{
     background: $blue;
+    &:hover{
+        background: $bluer;
+    }
 }
 .red-btn{
     background: $red;
+    &:hover{
+        background: $reder;
+    }
 }
 
 /* Topbar */
 #topbar{
-    height: em(75px);
-    .clear{
-
+    background: $dark;
+    padding: em(8px) 0;
+    .profile{
+        float: left;
+        position: relative;
+        top: 50%;
+        .photo{
+            border-radius: 50%;
+            display: inline-block;
+            height: em(34px);
+            overflow: hidden;
+            width: em(34px);
+            .img{
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .nav{
+            display: none;
+        }
+        .fa{
+            color: $white;
+            position: relative;
+            top: em(-10px);
+            right: em(-2px);
+        }
+        &:hover{
+            cursor: pointer;
+        }
+    }
+    .btn{
+        margin-top: em(5px);
+        float: right;
     }
 }
 
+/* Content */
+#content{
+    padding: em(25px) 0;
+    .title{
+        font-size: em(34px);
+        font-weight: 700;
+        margin-bottom: em(10px);
+    }
+}
+
+/* List */
+.list{
+    .item{
+        background: $white;
+        display: block;
+        padding: em(10px);
+        width: 100%;
+        &:nth-child(odd){
+            background: $gray;
+        }
+        .link{
+            color: $dark;
+            font-size: em(18px);
+            font-weight: 700;
+            text-decoration: none;
+        }
+        .actions{
+            float: right;
+            .options{
+                .option{
+                    float: left;
+                    margin-right: em(5px);
+                    .btn{
+                        font-size: em(11px);
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Articles */
+.articles{
+
+}
 
 /* Login */
-
 #login{
     padding: 5em;
     text-align: center;
@@ -95,4 +179,5 @@ body{
         font-size: 2em;
     }
 }
+
 
