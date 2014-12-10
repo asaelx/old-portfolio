@@ -122,6 +122,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Barryvdh\VendorCleanup\VendorCleanupServiceProvider',
+		'Thujohn\Twitter\TwitterServiceProvider',
 
 	),
 
@@ -189,6 +190,7 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
+		'Twitter' => 'Thujohn\Twitter\TwitterFacade',
 
 	),
 

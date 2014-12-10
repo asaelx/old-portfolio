@@ -6,7 +6,8 @@
 	"type": "project",
 	"require": {
 		"laravel/framework": "4.2.*",
-		"barryvdh/laravel-vendor-cleanup": "1.*"
+		"barryvdh/laravel-vendor-cleanup": "1.*",
+		"thujohn/twitter": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
