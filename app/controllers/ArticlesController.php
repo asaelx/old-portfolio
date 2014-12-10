@@ -3,6 +3,11 @@
 class ArticlesController extends BaseController{
 
     public function index(){
-        return View::make('article');
+        $user = User::where('username', 'asaelx')->first();
+        $data = [
+            'user' => $user
+        ];
+        return View::make('article')
+            ->with('data', $data);
     }
 }

@@ -240,6 +240,12 @@ body{
     .group{
         margin: em(15px) 0;
         position: relative;
+        .label{
+            display: inline-block;
+            font-size: em(18px);
+            padding: em(10px) em(15px);
+            width: 100%;
+        }
         .text,
         .textarea{
             background: $light;
@@ -250,6 +256,40 @@ body{
             width: 100%;
             &:hover,
             &:focus{
+                background: $gray;
+            }
+        }
+        .drop_file{
+            background: $light;
+            cursor: pointer;
+            font-size: em(18px);
+            padding: em(10px) em(15px);
+            position: relative;
+            .file{
+                cursor: pointer;
+                height: 100%;
+                left: 0;
+                opacity: 0;
+                position: absolute;
+                top: 0;
+                width: 100%;
+            }
+            .fa{
+                float: right;
+            }
+            .file_preview{
+                max-height: em(300px);
+                overflow: hidden;
+                .img{
+                    margin-top: 1em;
+                    width: 100%;
+                }
+                .error{
+                    color: $red;
+                    text-align: center;
+                }
+            }
+            &:hover{
                 background: $gray;
             }
         }

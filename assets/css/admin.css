@@ -162,6 +162,11 @@ body {
 .form .group {
   margin: 1.07143em 0;
   position: relative; }
+  .form .group .label {
+    display: inline-block;
+    font-size: 1.28571em;
+    padding: 0.71429em 1.07143em;
+    width: 100%; }
   .form .group .text,
   .form .group .textarea {
     background: #F8F8F8;
@@ -173,6 +178,33 @@ body {
     .form .group .text:hover, .form .group .text:focus,
     .form .group .textarea:hover,
     .form .group .textarea:focus {
+      background: #ECF0F1; }
+  .form .group .drop_file {
+    background: #F8F8F8;
+    cursor: pointer;
+    font-size: 1.28571em;
+    padding: 0.71429em 1.07143em;
+    position: relative; }
+    .form .group .drop_file .file {
+      cursor: pointer;
+      height: 100%;
+      left: 0;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      width: 100%; }
+    .form .group .drop_file .fa {
+      float: right; }
+    .form .group .drop_file .file_preview {
+      max-height: 21.42857em;
+      overflow: hidden; }
+      .form .group .drop_file .file_preview .img {
+        margin-top: 1em;
+        width: 100%; }
+      .form .group .drop_file .file_preview .error {
+        color: #E74C3C;
+        text-align: center; }
+    .form .group .drop_file:hover {
       background: #ECF0F1; }
   .form .group .submit {
     float: right; }
