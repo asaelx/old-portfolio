@@ -1,0 +1,65 @@
+/* Colors */
+/* Fonts */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic);
+/* General */
+html,
+body {
+  height: 100%;
+  position: relative;
+  width: 100%; }
+
+body {
+  background: #FFFFFF;
+  color: #34495E;
+  font-family: "Lato", "Helvetica", Arial, sans-serif;
+  font-size: 14px; }
+
+.clear:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.center {
+  margin: 0 auto;
+  width: 57.14286em; }
+
+/* Buttons */
+.btn {
+  border-radius: 1.07143em;
+  color: #FFFFFF;
+  display: inline-block;
+  font-family: "Lato", "Helvetica", Arial, sans-serif;
+  font-size: 0.92857em;
+  font-weight: 700;
+  padding: 0.35714em 0.71429em;
+  text-decoration: none;
+  text-transform: uppercase; }
+  .btn:hover {
+    cursor: pointer;
+    opacity: 0.8; }
+
+.green-btn {
+  background: #1ABC9C; }
+
+.blue-btn {
+  background: #3498DB; }
+
+.red-btn {
+  background: #E74C3C; }
+
+/* Topbar */
+#topbar {
+  height: 5.35714em; }
+
+/* Login */
+#login {
+  padding: 5em;
+  text-align: center; }
+  #login .title {
+    font-size: 3em;
+    font-weight: 700;
+    margin-bottom: 1em; }
+  #login .btn {
+    font-size: 2em; }
+
+/*# sourceMappingURL=admin.css.map */
