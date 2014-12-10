@@ -102,9 +102,9 @@ body {
     float: right; }
 
 /* Content */
-#content {
+.content {
   padding: 1.78571em 0; }
-  #content .title {
+  .content .title {
     font-size: 2.42857em;
     font-weight: 700;
     margin-bottom: 0.71429em; }
@@ -131,6 +131,27 @@ body {
         font-size: 0.78571em; }
 
 /* Articles */
+/* Settings */
+#settings .group {
+  margin: 1em 0;
+  text-align: center; }
+  #settings .group .hero {
+    line-height: 1.5; }
+    #settings .group .hero .photo {
+      border-radius: 50%;
+      display: inline-block;
+      overflow: hidden; }
+    #settings .group .hero .name {
+      font-size: 1.14286em;
+      font-weight: 700; }
+    #settings .group .hero .location .fa {
+      color: #1ABC9C; }
+    #settings .group .hero .bio {
+      font-style: italic;
+      margin-top: 0.71429em; }
+#settings .btn {
+  font-size: 1.14286em; }
+
 /* Login */
 #login {
   padding: 5em;

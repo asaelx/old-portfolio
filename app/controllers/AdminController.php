@@ -10,4 +10,13 @@ class AdminController extends BaseController{
         return View::make('admin.articles');
     }
 
+    public function settings(){
+        return View::make('admin.settings');
+    }
+
+    public function updateSettings(){
+        $all = Input::all();
+        return $all;
+    }
+
 }

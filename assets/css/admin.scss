@@ -147,7 +147,7 @@ body{
 }
 
 /* Content */
-#content{
+.content{
     padding: em(25px) 0;
     .title{
         font-size: em(34px);
@@ -188,9 +188,45 @@ body{
 }
 
 /* Articles */
-.articles{
+#articles{
 
 }
+
+/* Settings */
+#settings{
+    .group{
+        margin: 1em 0;
+        text-align: center;
+        .hero{
+            line-height: 1.5;
+            .photo{
+                border-radius: 50%;
+                display: inline-block;
+                overflow: hidden;
+                .img{
+
+                }
+            }
+            .name{
+                font-size: em(16px);
+                font-weight: 700;
+            }
+            .location{
+                .fa{
+                    color: $green;
+                }
+            }
+            .bio{
+                font-style: italic;
+                margin-top: em(10px);
+            }
+        }
+    }
+    .btn{
+        font-size: em(16px);
+    }
+}
+
 
 /* Login */
 #login{

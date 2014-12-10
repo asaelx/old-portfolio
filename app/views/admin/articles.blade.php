@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-    <section id="content" class="articles center clear">
+    <section id="articles" class="content center clear">
         <h1 class="title">Articles</h1>
         <ul class="articles_list list">
             <li class="article item">

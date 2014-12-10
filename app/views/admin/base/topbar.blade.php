@@ -7,15 +7,15 @@
             <nav class="nav">
                 <ul class="pages">
                     <li class="option">
-                        <a href="#" class="link">Articles</a>
+                        <a href="{{URL::to('admin/articles')}}" class="link">Articles</a>
                     </li>
                     <li class="option">
-                        <a href="#" class="link">Settings</a>
+                        <a href="{{URL::to('admin/settings')}}" class="link">Settings</a>
                     </li>
                 </ul><!-- /pages -->
             </nav>
             <i class="fa fa-caret-down"></i>
         </div><!-- /profile -->
-        <a href="#" class="btn green-btn">New article</a>
+        <a href="{{URL::to('admin/article')}}" class="btn green-btn">New article</a>
     </div>
 </div><!-- /topbar -->
