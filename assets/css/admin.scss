@@ -49,6 +49,7 @@ body{
 
 /* Buttons */
 .btn{
+    border: 0;
     border-radius: em(15px);
     color: $white;
     display: inline-block;
@@ -227,6 +228,24 @@ body{
     }
 }
 
+/* Form */
+.form{
+    .group{
+        margin: em(15px) 0;
+        position: relative;
+        .text,
+        .textarea{
+            border: none;
+            color: $dark;
+            font-size: em(18px);
+            padding: em(10px) em(15px);
+            width: 100%;
+        }
+        .submit{
+            float: right;
+        }
+    }
+}
 
 /* Login */
 #login{

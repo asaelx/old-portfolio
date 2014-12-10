@@ -25,6 +25,7 @@ body {
 
 /* Buttons */
 .btn {
+  border: 0;
   border-radius: 1.07143em;
   color: #FFFFFF;
   display: inline-block;
@@ -151,6 +152,20 @@ body {
       margin-top: 0.71429em; }
 #settings .btn {
   font-size: 1.14286em; }
+
+/* Form */
+.form .group {
+  margin: 1.07143em 0;
+  position: relative; }
+  .form .group .text,
+  .form .group .textarea {
+    border: none;
+    color: #34495E;
+    font-size: 1.28571em;
+    padding: 0.71429em 1.07143em;
+    width: 100%; }
+  .form .group .submit {
+    float: right; }
 
 /* Login */
 #login {

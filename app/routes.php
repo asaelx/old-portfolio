@@ -15,6 +15,10 @@ Route::get('/', 'ProjectsController@index');
 Route::get('article', 'ArticlesController@index');
 
 Route::get('admin', 'AdminController@index');
+
+Route::get('admin/article', 'AdminController@article');
+Route::post('admin/saveArticle', 'AdminController@saveArticle');
+
 Route::get('admin/articles', 'AdminController@articles');
 Route::get('admin/settings', 'AdminController@settings');
 Route::post('admin/updateSettings', 'AdminController@updateSettings');

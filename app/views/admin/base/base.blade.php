@@ -14,6 +14,7 @@
 @yield('content')
 
 {{HTML::script('assets/js/jquery.min.js')}}
+{{HTML::script('assets/js/jquery.autosize.min.js')}}
 {{HTML::script('assets/js/admin.js')}}
 </body>
 </html>
