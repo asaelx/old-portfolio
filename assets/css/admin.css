@@ -85,7 +85,7 @@ body {
         display: block;
         overflow: hidden;
         position: absolute;
-        right: -3.85714em;
+        right: -4.14286em;
         top: 0;
         z-index: 3; }
         #topbar .profile:hover .nav .pages .option {
@@ -95,9 +95,11 @@ body {
             text-decoration: none;
             width: 100%; }
           #topbar .profile:hover .nav .pages .option:hover {
-            background: #34495E; }
+            background: #34495E;
+            transition: all 0.3s ease; }
             #topbar .profile:hover .nav .pages .option:hover .link {
-              color: #FFFFFF; }
+              color: #FFFFFF;
+              transition: all 0.3s ease; }
   #topbar .btn {
     margin-top: 0.35714em;
     float: right; }
@@ -109,6 +111,9 @@ body {
     font-size: 2.42857em;
     font-weight: 700;
     margin-bottom: 0.71429em; }
+    .content .title .btn {
+      float: right;
+      font-size: 0.42857em; }
 
 /* List */
 .list .item {
@@ -159,11 +164,16 @@ body {
   position: relative; }
   .form .group .text,
   .form .group .textarea {
+    background: #F8F8F8;
     border: none;
     color: #34495E;
     font-size: 1.28571em;
     padding: 0.71429em 1.07143em;
     width: 100%; }
+    .form .group .text:hover, .form .group .text:focus,
+    .form .group .textarea:hover,
+    .form .group .textarea:focus {
+      background: #ECF0F1; }
   .form .group .submit {
     float: right; }
 

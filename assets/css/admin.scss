@@ -8,6 +8,7 @@ $reder: #C0392B;
 $dark: #34495E;
 $darker: #2C3E50;
 $white: #FFFFFF;
+$light: #F8F8F8;
 $gray: #ECF0F1;
 $grayer: #BDC3C7;
 
@@ -119,7 +120,7 @@ body{
                 display: block;
                 overflow: hidden;
                 position: absolute;
-                right: em(-54px);
+                right: em(-58px);
                 top: 0;
                 z-index: 3;
                 .pages{
@@ -132,8 +133,10 @@ body{
                         }
                         &:hover{
                             background: $dark;
+                            transition: all 0.3s ease;
                             .link{
                                 color: $white;
+                                transition: all 0.3s ease;
                             }
                         }
                     }
@@ -154,6 +157,10 @@ body{
         font-size: em(34px);
         font-weight: 700;
         margin-bottom: em(10px);
+        .btn{
+            float: right;
+            font-size: em(6px);
+        }
     }
 }
 
@@ -235,11 +242,16 @@ body{
         position: relative;
         .text,
         .textarea{
+            background: $light;
             border: none;
             color: $dark;
             font-size: em(18px);
             padding: em(10px) em(15px);
             width: 100%;
+            &:hover,
+            &:focus{
+                background: $gray;
+            }
         }
         .submit{
             float: right;

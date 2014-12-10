@@ -14,12 +14,19 @@ class AdminController extends BaseController{
         endif;
     }
 
-    public function article(){
+    public function article($id = false){
+        if(isset($id)):
+            $article = Article::find($id);
+            return View::make('admin.article')
+                ->with('article', $article);
+        endif;
         return View::make('admin.article');
     }
 
     public function articles(){
-        return View::make('admin.articles');
+        $articles = Article::all();
+        return View::make('admin.articles')
+            ->with('articles', $articles);
     }
 
     public function settings(){
@@ -45,11 +52,29 @@ class AdminController extends BaseController{
             $article->title = Input::get('title');
             $article->content = Input::get('content');
             $article->media = 1;
-            $article->user = 1;
+            $article->user = Auth::user()->id;
             if($article->save()):
                 return Redirect::to('admin/articles');
             endif;
         endif;
+    }
+
+    public function updateArticle($id){
+        $article = Article::find($id);
+        if($article):
+            $article->title = Input::get('title');
+            $article->content = Input::get('content');
+            $article->save();
+        endif;
+        return Redirect::to('admin/articles');
+    }
+
+    public function deleteArticle($id){
+        $article = Article::find($id);
+        if($article):
+            $article->delete();
+        endif;
+        return Redirect::to('admin/articles');
     }
 
     public function twitterLogin(){

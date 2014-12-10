@@ -23,7 +23,10 @@ Route::group(['prefix' => 'admin'], function(){
 
     Route::group(['before' => 'auth'], function(){
         Route::get('article', 'AdminController@article');
+        Route::get('article/{id?}', ['uses' => 'AdminController@article']);
+        Route::get('article/delete/{id?}', ['uses' => 'AdminController@deleteArticle']);
         Route::post('saveArticle', 'AdminController@saveArticle');
+        Route::post('updateArticle/{id}', ['uses' => 'AdminController@updateArticle']);
 
         Route::get('articles', 'AdminController@articles');
         Route::get('settings', 'AdminController@settings');

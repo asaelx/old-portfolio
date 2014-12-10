@@ -5,7 +5,7 @@
         </div>
         <div class="content">
             <div class="photo">
-                {{HTML::image('assets/img/profile.jpg', 'asaelx')}}
+                {{HTML::image($data['user']->photo, 'asaelx')}}
             </div><!-- /photo -->
             <h1 class="name">{{$data['user']->name}}</h1>
             <div class="location">
