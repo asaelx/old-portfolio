@@ -3,7 +3,10 @@ $dark: #34495E;
 $darker: #2C3E50;
 $green: #1ABC9C;
 $greener: #16A085;
+$blue: #3498DB;
+$bluer: #2980B9;
 $light: #ECF0F1;
+$gray: #7F8C8D;
 $white: #FFFFFF;
 
 /* Fonts */
@@ -338,17 +341,67 @@ $sidebar_width: em(220px);
         }
     }
     .content{
+        color: $dark;
+        font-weight: 500;
+        line-height: em(30px);
         margin: 2em auto;
-        p{
-            color: $dark;
-            font-size: em(18px);
+
+        /* Headings */
+        $start: 2.8em;
+        @each $h in h1, h2, h3, h4, h5, h6{
+            #{$h} {
+                font-size: $start;
+            }
+            $start: $start - 0.3;
+        }
+
+        h1, h2, h3, h4, h5, h6{
+            border-bottom: em(1px) solid $light;
+            color: $darker;
             font-weight: 700;
-            line-height: em(28px);
+            padding-bottom: em(5px);
+            margin: em(10px) 0;
+        }
+        p{
+            font-size: em(18px);
+            margin: em(20px) 0;
+        }
+        em{
+            font-style: italic;
+        }
+        strong{
+            font-weight: 700;
+            em{
+                font-style: italic;
+                font-weight: 700;
+            }
+        }
+        blockquote{
+            border-left: em(2px) solid $green;
+            font-size: em(16px);
+            line-height: 1.5;
+            padding-left: em(15px);
+        }
+        a{
+            color: $blue;
+            &:hover{
+                color: $bluer;
+            }
         }
         img{
             border-radius: em(3px);
-            margin: 2em 0;
             width: 100%;
+        }
+        ul, ol{
+            border-left: em(2px) solid $light;
+            font-size: em(18px);
+            padding-left: em(30px);
+        }
+        ul{
+            list-style: disc;
+        }
+        ol{
+            list-style: decimal;
         }
     }
 }

@@ -14,6 +14,7 @@
         $action = ['AdminController@updateArticle', $article->id];
         $title = $article->title;
         $content = $article->content;
+        $img = $article->media;
         ?>
     @else
         <?php
@@ -36,7 +37,11 @@
                 Background
                 <i class="fa fa-upload"></i>
                 {{Form::file('bg', ['class' => 'file'])}}
-                <div class="file_preview"></div>
+                <div class="file_preview">
+                    @if ($img)
+                        {{HTML::image($img->url, $img->title, ['class' => 'img'])}}
+                    @endif
+                </div><!-- /file_preview -->
             </div><!-- /drop_file -->
         </div><!-- /group -->
         <div class="group clear">

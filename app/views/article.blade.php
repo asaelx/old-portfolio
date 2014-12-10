@@ -1,7 +1,7 @@
 @extends('base.base')
 
 @section('title')
-    Artículo
+    {{$data['article']->title}}
 @stop
 
 @section('sidebar')
@@ -13,18 +13,17 @@
         <article>
             <div class="hero_cover">
                 <div class="hero_img">
-                    {{HTML::image('assets/img/hero_img.jpg', 'Artículo', ['class' => 'img'])}}
+                    {{HTML::image($data['article']->media->url, $data['article']->media->title, ['class' => 'img'])}}
                 </div>
                 <div class="center">
                     <div class="header">
-                        <h1 class="title">Art of ParaNorman Vynil</h1>
-                        <span class="details">Por Asael Jaimes | Martes, 9 de Diciembre 2014</span>
+                        <h1 class="title">{{$data['article']->title}}</h1>
+                        <span class="details">Por {{$data['user']->name}} | Martes, 9 de Diciembre 2014</span>
                     </div>
                 </div>
             </div><!-- /hero_cover -->
             <div class="content center">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut libero neque, varius at mauris semper, vehicula pretium purus. Nullam egestas quis justo id tempor. Sed et odio id quam finibus molestie. Aenean in mi dui. Nam at dictum nulla, vitae venenatis orci. Proin lobortis sit amet sapien ut vehicula. Nulla sagittis ullamcorper fermentum. Nam dictum ligula nec tincidunt efficitur.</p>
-                {{HTML::image('assets/img/img.jpg', 'img')}}
+                {{Markdown::parse($data['article']->content)}}
             </div><!-- /content -->
         </article>
     </section><!-- /article -->

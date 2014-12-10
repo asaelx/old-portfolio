@@ -7,7 +7,8 @@
 	"require": {
 		"laravel/framework": "4.2.*",
 		"barryvdh/laravel-vendor-cleanup": "1.*",
-		"thujohn/twitter": "dev-master"
+		"thujohn/twitter": "dev-master",
+		"maxhoffmann/parsedown-laravel": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

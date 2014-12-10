@@ -123,6 +123,7 @@ return array(
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'Barryvdh\VendorCleanup\VendorCleanupServiceProvider',
 		'Thujohn\Twitter\TwitterServiceProvider',
+		'MaxHoffmann\Parsedown\ParsedownServiceProvider',
 
 	),
 
@@ -190,7 +191,8 @@ return array(
 		'URL'               => 'Illuminate\Support\Facades\URL',
 		'Validator'         => 'Illuminate\Support\Facades\Validator',
 		'View'              => 'Illuminate\Support\Facades\View',
-		'Twitter' => 'Thujohn\Twitter\TwitterFacade',
+		'Twitter' 			=> 'Thujohn\Twitter\TwitterFacade',
+		'Markdown'	        => 'MaxHoffmann\Parsedown\ParsedownFacade',
 
 	),
 

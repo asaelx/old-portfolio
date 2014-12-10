@@ -17,6 +17,8 @@ class AdminController extends BaseController{
     public function article($id = false){
         if(isset($id)):
             $article = Article::find($id);
+            $media = Media::find($article->media);
+            $article->media = $media;
             return View::make('admin.article')
                 ->with('article', $article);
         endif;
@@ -48,13 +50,26 @@ class AdminController extends BaseController{
             return Redirect::to('admin/article')
                 ->withErrors($validator);
         else:
-            $article = new Article;
-            $article->title = Input::get('title');
-            $article->content = Input::get('content');
-            $article->media = 1;
-            $article->user = Auth::user()->id;
-            if($article->save()):
-                return Redirect::to('admin/articles');
+            if(Input::hasFile('bg')):
+                $destination = base_path() . '/uploads/';
+                $file = Input::file('bg');
+                $name = time() . '.' . $file->getClientOriginalExtension();
+                $file->move($destination, $name);
+
+                $media = new Media;
+                $media->title = $file->getClientOriginalName();
+                $media->url = 'uploads/' . $name;
+                $media->type = 'image';
+                if($media->save()):
+                    $article = new Article;
+                    $article->title = Input::get('title');
+                    $article->content = Input::get('content');
+                    $article->media = $media->id;
+                    $article->user = Auth::user()->id;
+                    if($article->save()):
+                        return Redirect::to('admin/articles');
+                    endif;
+                endif;
             endif;
         endif;
     }
@@ -62,9 +77,35 @@ class AdminController extends BaseController{
     public function updateArticle($id){
         $article = Article::find($id);
         if($article):
-            $article->title = Input::get('title');
-            $article->content = Input::get('content');
-            $article->save();
+            $all = Input::all();
+
+            $rules = [
+                'title' => 'required',
+                'content' => 'required'
+            ];
+
+            $validator = Validator::make($all, $rules);
+
+            if($validator->fails()):
+                $messages = $validator->messages();
+                return Redirect::to('admin/article/' . $id);
+            else:
+                if(Input::hasFile('bg')):
+                    $destination = base_path() . '/uploads/';
+                    $file = Input::file('bg');
+                    $name = time() . '.' . $file->getClientOriginalExtension();
+                    $file->move($destination, $name);
+                    $media = new Media;
+                    $media->title = $file->getClientOriginalName();
+                    $media->url = 'uploads/' . $name;
+                    $media->type = 'image';
+                    $media->save();
+                endif;
+                $article->title = Input::get('title');
+                $article->content = Input::get('content');
+                if(isset($media)) $article->media = $media->id;
+                $article->save();
+            endif;
         endif;
         return Redirect::to('admin/articles');
     }
