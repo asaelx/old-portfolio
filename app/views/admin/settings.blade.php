@@ -14,17 +14,17 @@
             <div class="group">
                 <div class="hero">
                     <div class="photo">
-                        {{HTML::image('assets/img/profile.jpg', 'asaelx', ['class' => 'img'])}}
+                        {{HTML::image(Auth::user()->photo, Auth::user()->username, ['class' => 'img'])}}
                     </div><!-- /photo -->
                     <div class="name">
-                        Asael Jaimes
+                        {{Auth::user()->name}}
                     </div><!-- /name -->
                     <div class="location">
                         <i class="fa fa-map-marker"></i>
-                        Mérida, México
+                        {{Auth::user()->location}}
                     </div><!-- /location -->
                     <div class="bio">
-                        Diseñador · Desarrollador<br>Me creo mucho y le llevo la contraria a todo.
+                        {{Auth::user()->bio}}
                     </div><!-- /bio -->
                 </div><!-- /hero -->
             </div><!-- /group -->

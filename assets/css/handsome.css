@@ -47,9 +47,10 @@ body {
       width: auto; }
       #sidebar .hero .hero_bg .img {
         height: 100%;
-        position: relative;
+        left: 50%;
+        position: absolute;
+        transform: translateX(-50%);
         vertical-align: middle;
-        width: 100%;
         z-index: 1; }
     #sidebar .hero .content {
       position: relative;

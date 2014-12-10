@@ -2,7 +2,7 @@
     <div class="center">
         <div class="profile">
             <div class="photo">
-                {{HTML::image('assets/img/profile.jpg', 'asaelx', ['class' => 'img'])}}
+                {{HTML::image(Auth::user()->photo, Auth::user()->username, ['class' => 'img'])}}
             </div><!-- /photo -->
             <nav class="nav">
                 <ul class="pages">
@@ -11,6 +11,9 @@
                     </li>
                     <li class="option">
                         <a href="{{URL::to('admin/settings')}}" class="link">Settings</a>
+                    </li>
+                    <li class="option">
+                        <a href="{{URL::to('admin/twitterLogout')}}" class="link">Logout</a>
                     </li>
                 </ul><!-- /pages -->
             </nav>

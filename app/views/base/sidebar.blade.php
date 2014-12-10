@@ -1,21 +1,19 @@
-
-
 <aside id="sidebar">
     <div class="hero">
         <div class="hero_bg">
-            {{HTML::image('assets/img/hero_bg.jpg', 'asaelx background', ['class' => 'img'])}}
+            {{HTML::image($data['user']->bg, 'asaelx background', ['class' => 'img'])}}
         </div>
         <div class="content">
             <div class="photo">
                 {{HTML::image('assets/img/profile.jpg', 'asaelx')}}
             </div><!-- /photo -->
-            <h1 class="name">Asael Jaimes</h1>
+            <h1 class="name">{{$data['user']->name}}</h1>
             <div class="location">
                 <i class="fa fa-map-marker"></i>
-                Mérida, México
+                {{$data['user']->location}}
             </div><!-- /location -->
             <div class="bio">
-                Diseñador · Desarrollador<br>Me creo mucho y le llevo la contraria a todo.
+                {{$data['user']->bio}}
             </div><!-- /bio -->
         </div><!-- /content -->
     </div><!-- /hero -->

@@ -18,12 +18,13 @@ class CreateUsersTable extends Migration {
 
 			$table->increments('id');
 			$table->string('username', 16);
-			$table->string('email', 30);
-			$table->string('bg', 50);
-			$table->string('photo', 50);
+			$table->string('name', 30);
+			$table->string('bg', 100);
+			$table->string('photo', 100);
 			$table->string('location', 30);
 			$table->string('bio', 160);
 			$table->string('twitter_token');
+			$table->string('twitter_secret');
 			$table->rememberToken();
 
 			$table->timestamps();

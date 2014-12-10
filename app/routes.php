@@ -14,11 +14,22 @@
 Route::get('/', 'ProjectsController@index');
 Route::get('article', 'ArticlesController@index');
 
-Route::get('admin', 'AdminController@index');
+Route::group(['prefix' => 'admin'], function(){
 
-Route::get('admin/article', 'AdminController@article');
-Route::post('admin/saveArticle', 'AdminController@saveArticle');
+    Route::get('/', 'AdminController@login');
+    Route::get('twitterLogin', 'AdminController@twitterLogin');
+    Route::get('twitterCallback', 'AdminController@twitterCallback');
+    Route::get('twitterError', 'AdminController@twitterError');
 
-Route::get('admin/articles', 'AdminController@articles');
-Route::get('admin/settings', 'AdminController@settings');
-Route::post('admin/updateSettings', 'AdminController@updateSettings');
+    Route::group(['before' => 'auth'], function(){
+        Route::get('article', 'AdminController@article');
+        Route::post('saveArticle', 'AdminController@saveArticle');
+
+        Route::get('articles', 'AdminController@articles');
+        Route::get('settings', 'AdminController@settings');
+        Route::post('updateSettings', 'AdminController@updateSettings');
+
+        Route::get('twitterLogout', 'AdminController@twitterLogout');
+    });
+
+});
