@@ -14,8 +14,8 @@ class AdminController extends BaseController{
         endif;
     }
 
-    public function article($id = false){
-        if(isset($id)):
+    public function article($id = null){
+        if($id):
             $article = Article::find($id);
             $media = Media::find($article->media);
             $article->media = $media;
@@ -63,6 +63,7 @@ class AdminController extends BaseController{
                 if($media->save()):
                     $article = new Article;
                     $article->title = Input::get('title');
+                    $article->slug = Str::slug(Input::get('title'));
                     $article->content = Input::get('content');
                     $article->media = $media->id;
                     $article->user = Auth::user()->id;
@@ -102,6 +103,7 @@ class AdminController extends BaseController{
                     $media->save();
                 endif;
                 $article->title = Input::get('title');
+                $article->slug = Str::slug(Input::get('title'));
                 $article->content = Input::get('content');
                 if(isset($media)) $article->media = $media->id;
                 $article->save();

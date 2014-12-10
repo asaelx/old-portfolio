@@ -27,7 +27,7 @@ body {
   float: left;
   height: 100%;
   overflow: hidden;
-  position: relative;
+  position: fixed;
   text-align: center;
   width: 15.71429em;
   z-index: 2; }
@@ -141,8 +141,6 @@ body {
 #content {
   float: right;
   height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
   position: relative;
   width: calc(100% - 15.71429em);
   z-index: 1; }
@@ -277,6 +275,7 @@ body {
     border-bottom: 0.07143em solid #ECF0F1;
     color: #2C3E50;
     font-weight: 700;
+    line-height: 1.2;
     padding-bottom: 0.35714em;
     margin: 0.71429em 0; }
   .article .content p {

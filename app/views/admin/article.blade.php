@@ -9,7 +9,7 @@
 @stop
 
 @section('content')
-    @if ($article)
+    @if (isset($article))
         <?php
         $action = ['AdminController@updateArticle', $article->id];
         $title = $article->title;
@@ -38,7 +38,7 @@
                 <i class="fa fa-upload"></i>
                 {{Form::file('bg', ['class' => 'file'])}}
                 <div class="file_preview">
-                    @if ($img)
+                    @if (isset($img))
                         {{HTML::image($img->url, $img->title, ['class' => 'img'])}}
                     @endif
                 </div><!-- /file_preview -->

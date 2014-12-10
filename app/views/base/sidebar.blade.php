@@ -20,10 +20,7 @@
     <nav>
         <ul class="ul">
             <li class="option">
-                <a href="#" class="link active">Trabajos <i class="fa fa-angle-right"></i></a>
-            </li>
-            <li class="option">
-                <a href="#" class="link">Blog <i class="fa fa-angle-right"></i></a>
+                <a href="{{URL::to('/')}}" class="link active">Trabajos <i class="fa fa-angle-right"></i></a>
             </li>
         </ul>
     </nav><!-- /nav -->
