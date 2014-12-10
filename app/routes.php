@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'ProjectsController@index');
-Route::get('articulo/{id}', ['uses' => 'ArticlesController@index']);
+Route::get('articulo/{slug}', ['uses' => 'ArticlesController@index']);
 
 Route::group(['prefix' => 'admin'], function(){
 

@@ -2,9 +2,9 @@
 
 class ArticlesController extends BaseController{
 
-    public function index($id){
+    public function index($slug){
         $user = User::where('username', 'asaelx')->first();
-        $article = Article::find($id);
+        $article = Article::where('slug', $slug)->first();
         $media = Media::find($article->media);
         $article->media = $media;
         $data = [
