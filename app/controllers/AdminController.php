@@ -17,7 +17,7 @@ class AdminController extends BaseController{
     public function article($id = null){
         if($id):
             $article = Article::find($id);
-            $media = Media::find($article->media);
+            $media = Media::find($article->media_id);
             $article->media = $media;
             return View::make('admin.article')
                 ->with('article', $article);
@@ -65,8 +65,8 @@ class AdminController extends BaseController{
                     $article->title = Input::get('title');
                     $article->slug = Str::slug(Input::get('title'));
                     $article->content = Input::get('content');
-                    $article->media = $media->id;
-                    $article->user = Auth::user()->id;
+                    $article->media_id = $media->id;
+                    $article->user_id = Auth::user()->id;
                     if($article->save()):
                         return Redirect::to('admin/articles');
                     endif;
@@ -105,7 +105,7 @@ class AdminController extends BaseController{
                 $article->title = Input::get('title');
                 $article->slug = Str::slug(Input::get('title'));
                 $article->content = Input::get('content');
-                if(isset($media)) $article->media = $media->id;
+                if(isset($media)) $article->media_id = $media->id;
                 $article->save();
             endif;
         endif;

@@ -20,16 +20,16 @@ class CreateArticlesTable extends Migration {
 			$table->string('title', 50);
 			$table->string('slug', 50);
 			$table->text('content');
-			$table->unsignedInteger('user');
-			$table->unsignedInteger('media');
+			$table->unsignedInteger('user_id');
+			$table->unsignedInteger('media_id');
 
 			$table->timestamps();
 
 		});
 
 		Schema::table('articles', function($table){
-			$table->foreign('user')->references('id')->on('users');
-			$table->foreign('media')->references('id')->on('medias');
+			$table->foreign('user_id')->references('id')->on('users');
+			$table->foreign('media_id')->references('id')->on('medias');
 		});
 	}
 
@@ -41,8 +41,8 @@ class CreateArticlesTable extends Migration {
 	public function down()
 	{
 		Schema::table('articles', function($table){
-			$table->dropForeign('articles_user_foreign');
-			$table->dropForeign('articles_media_foreign');
+			$table->dropForeign('articles_user_id_foreign');
+			$table->dropForeign('articles_media_id_foreign');
 		});
 
 		Schema::drop('articles');

@@ -11,9 +11,12 @@
 |
 */
 
-Route::get('/', 'ProjectsController@index');
-Route::get('articulo/{slug}', ['uses' => 'ArticlesController@index']);
 
+// Front
+Route::get('/', 'StreamController@index');
+Route::get('articulo/{slug}', ['uses' => 'StreamController@article']);
+
+// Admin
 Route::group(['prefix' => 'admin'], function(){
 
     Route::get('/', 'AdminController@login');

@@ -10,6 +10,7 @@
 
 @section('content')
     <section id="content" class="projects clear">
+    <?php print_r($data['articles']); ?>
         <article class="project">
             <a href="#" class="link">
                 <div class="project_img">
