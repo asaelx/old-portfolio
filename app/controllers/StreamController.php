@@ -15,9 +15,7 @@ class StreamController extends BaseController{
 
     public function article($slug){
         $user = User::where('username', 'asaelx')->first();
-        $article = Article::where('slug', $slug)->first();
-        $media = Media::find($article->media);
-        $article->media = $media;
+        $article = Article::with('media', 'user')->where('slug', $slug)->first();
         $data = [
             'user' => $user,
             'article' => $article

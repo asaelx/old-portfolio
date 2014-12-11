@@ -18,7 +18,7 @@
                 <div class="center">
                     <div class="header">
                         <h1 class="title">{{$data['article']->title}}</h1>
-                        <span class="details">Por {{$data['user']->name}} | Martes, 9 de Diciembre 2014</span>
+                        <span class="details">Por {{$data['article']->user->name}} | Martes, 9 de Diciembre 2014</span>
                     </div>
                 </div>
             </div><!-- /hero_cover -->

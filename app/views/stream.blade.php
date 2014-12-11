@@ -13,7 +13,7 @@
         @if ($data['articles']->count())
             @foreach ($data['articles'] as $article)
                 <article class="project">
-                    <a href="#" class="link">
+                    <a href="{{URL::to('articulo/' . $article->slug)}}" class="link">
                         <div class="project_img">
                             {{HTML::image($article->media->url, $article->title, ['class' => 'img'])}}
                         </div>
