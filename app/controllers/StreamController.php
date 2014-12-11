@@ -4,7 +4,7 @@ class StreamController extends BaseController{
 
     public function index(){
         $user = User::where('username', 'asaelx')->first();
-        $articles = Article::with('media')->get();
+        $articles = Article::all();
         $data = [
             'user' => $user,
             'articles' => $articles
