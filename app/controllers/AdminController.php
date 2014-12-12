@@ -2,6 +2,9 @@
 
 class AdminController extends BaseController{
 
+    private $originals_path = '/uploads/originals/';
+    private $thumbnails_path = '/uploads/thumbnails/';
+
     public function index(){
         return View::make('admin.login');
     }
@@ -51,14 +54,17 @@ class AdminController extends BaseController{
                 ->withErrors($validator);
         else:
             if(Input::hasFile('bg')):
-                $destination = base_path() . '/uploads/';
+                $destination = base_path() . $this->originals_path;
                 $file = Input::file('bg');
                 $name = time() . '.' . $file->getClientOriginalExtension();
                 $file->move($destination, $name);
 
+                Image::make(base_path() . $this->originals_path . $name)->fit(250)->save(base_path() . $this->thumbnails_path . $name);
+
                 $media = new Media;
                 $media->title = $file->getClientOriginalName();
-                $media->url = 'uploads/' . $name;
+                $media->url = $this->originals_path . $name;
+                $media->thumbnail = $this->thumbnails_path . $name;
                 $media->type = 'image';
                 if($media->save()):
                     $article = new Article;
@@ -92,15 +98,19 @@ class AdminController extends BaseController{
                 return Redirect::to('admin/article/' . $id);
             else:
                 if(Input::hasFile('bg')):
-                    $destination = base_path() . '/uploads/';
-                    $file = Input::file('bg');
-                    $name = time() . '.' . $file->getClientOriginalExtension();
-                    $file->move($destination, $name);
-                    $media = new Media;
-                    $media->title = $file->getClientOriginalName();
-                    $media->url = 'uploads/' . $name;
-                    $media->type = 'image';
-                    $media->save();
+                    // $destination = base_path() . '/uploads/originals/';
+                    // $file = Input::file('bg');
+                    // $name = time() . '.' . $file->getClientOriginalExtension();
+                    // $file->move($destination, $name);
+
+                    // Image::make(base_path() . '/uploads/originals/' . $name)->fit(250)->save(base_path() . '/uploads/thumbnails/' . $name);
+
+                    // $media = new Media;
+                    // $media->title = $file->getClientOriginalName();
+                    // $media->original_bg = 'uploads/originals/' . $name;
+                    // $media->thumbnail_bg = 'uploads/thumbnails/' . $name;
+                    // $media->type = 'image';
+                    // $media->save();
                 endif;
                 $article->title = Input::get('title');
                 $article->slug = Str::slug(Input::get('title'));
