@@ -20,7 +20,7 @@
                         <div class="content">
                             <h2 class="title">{{$article->title}}</h2>
                             <div class="short">
-                                <p>{{str_limit($article->content, $limit = 100, $end = '...')}}</p>
+                                <p>{{str_limit(Markdown::parse($article->content), $limit = 100, $end = '...')}}</p>
                             </div>
                         </div>
                     </a>

@@ -163,9 +163,22 @@ class AdminController extends BaseController{
                 $user = User::where('username', 'asaelx')->first();
                 if($user):
                     if($user->username == $credentials->screen_name):
+
+                        $original_photo = str_replace('_normal', '', $credentials->profile_image_url);
+                        $photo = base_path() . '/uploads/originals/' . $credentials->screen_name . '.jpeg';
+                        $thumbnail_photo = '/uploads/thumbnails/' . $credentials->screen_name . '.jpeg';
+                        file_put_contents($photo, file_get_contents($original_photo));
+                        Image::make($photo)->resize(64, 64)->save(base_path() . $thumbnail_photo);
+
+                        $original_bg = $credentials->profile_banner_url;
+                        $bg = base_path() . '/uploads/originals/' . $credentials->screen_name . '_bg.jpeg';
+                        $thumbnail_bg = '/uploads/thumbnails/' . $credentials->screen_name . '_bg.jpeg';
+                        file_put_contents($bg, file_get_contents($original_bg));
+                        Image::make($bg)->fit(250)->save(base_path() . $thumbnail_bg);
+
                         $user->name = $credentials->name;
-                        $user->bg = $credentials->profile_banner_url;
-                        $user->photo = $credentials->profile_image_url;
+                        $user->bg = $thumbnail_bg;
+                        $user->photo = $thumbnail_photo;
                         $user->location = $credentials->location;
                         $user->bio = $credentials->description;
                         $user->twitter_token = $token['oauth_token'];

@@ -75,8 +75,9 @@ $sidebar_width: em(220px);
             .img{
                 height: 100%;
                 left: 50%;
-                position: absolute;
-                transform: translateX(-50%);
+                position: relative;
+                top: 50%;
+                transform: translate(-50%, -50%);
                 vertical-align: middle;
                 z-index: 1;
             }
@@ -244,7 +245,7 @@ $sidebar_width: em(220px);
             position: absolute;
             text-align: center;
             top: 50%;
-            transform: translateX(-50%) translateY(-50%);
+            transform: translate(-50%, -50%);
             width: 100%;
             z-index: 2;
             .title{

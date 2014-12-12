@@ -20,7 +20,7 @@
     <nav>
         <ul class="ul">
             <li class="option">
-                <a href="{{URL::to('/')}}" class="link active">Trabajos <i class="fa fa-angle-right"></i></a>
+                <a href="{{URL::to('/')}}" class="link active">Stream <i class="fa fa-angle-right"></i></a>
             </li>
         </ul>
     </nav><!-- /nav -->

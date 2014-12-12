@@ -124,6 +124,7 @@ return array(
 		'Barryvdh\VendorCleanup\VendorCleanupServiceProvider',
 		'Thujohn\Twitter\TwitterServiceProvider',
 		'MaxHoffmann\Parsedown\ParsedownServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 
 	),
 
@@ -193,6 +194,7 @@ return array(
 		'View'              => 'Illuminate\Support\Facades\View',
 		'Twitter' 			=> 'Thujohn\Twitter\TwitterFacade',
 		'Markdown'	        => 'MaxHoffmann\Parsedown\ParsedownFacade',
+		'Image' 			=> 'Intervention\Image\Facades\Image',
 
 	),
 
