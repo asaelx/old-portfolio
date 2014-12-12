@@ -15,7 +15,7 @@
                 <article class="project">
                     <a href="{{URL::to('articulo/' . $article->slug)}}" class="link">
                         <div class="project_img">
-                            {{HTML::image($article->media->url, $article->title, ['class' => 'img'])}}
+                            {{HTML::image($article->media->thumbnail, $article->title, ['class' => 'img'])}}
                         </div>
                         <div class="content">
                             <h2 class="title">{{$article->title}}</h2>
