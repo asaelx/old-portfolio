@@ -14,6 +14,7 @@
 @yield('sidebar')
 @yield('content')
 
+{{HTML::script('assets/js/prefixfree.min.js')}}
 {{HTML::script('assets/js/instafeed.min.js')}}
 {{HTML::script('assets/js/magic.js')}}
 </body>
