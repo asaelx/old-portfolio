@@ -15,12 +15,12 @@
                 <article class="project">
                     <a href="{{URL::to('articulo/' . $article->slug)}}" class="link">
                         <div class="project_img">
-                            {{HTML::image($article->media->thumbnail, $article->title, ['class' => 'img'])}}
+                            {{HTML::image('uploads/thumbnails/' . $article->media->url, $article->title, ['class' => 'img'])}}
                         </div>
                         <div class="content">
                             <h2 class="title">{{$article->title}}</h2>
                             <div class="short">
-                                <p>{{str_limit(Markdown::parse($article->content), $limit = 100, $end = '...')}}</p>
+                                <p>{{$article->short}}</p>
                             </div>
                         </div>
                     </a>

@@ -261,7 +261,6 @@ body{
         }
         .drop_file{
             background: $light;
-            cursor: pointer;
             font-size: em(18px);
             padding: em(10px) em(15px);
             position: relative;
@@ -281,12 +280,18 @@ body{
                 max-height: em(300px);
                 overflow: hidden;
                 .img{
+                    height: 100%;
                     margin-top: 1em;
-                    width: 100%;
                 }
                 .error{
                     color: $red;
                     text-align: center;
+                }
+                .item{
+                    float: left;
+                    height: em(80px);
+                    margin-right: em(10px);
+                    margin-bottom: em(10px);
                 }
             }
             &:hover{

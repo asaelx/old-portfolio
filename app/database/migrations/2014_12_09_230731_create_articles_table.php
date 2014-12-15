@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration {
 			$table->increments('id');
 			$table->string('title', 50);
 			$table->string('slug', 50);
+			$table->string('short', 50);
 			$table->text('content');
 			$table->unsignedInteger('user_id');
 			$table->unsignedInteger('media_id');

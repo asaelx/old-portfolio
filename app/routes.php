@@ -35,6 +35,8 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('settings', 'AdminController@settings');
         Route::post('updateSettings', 'AdminController@updateSettings');
 
+        Route::post('uploadItem', 'AdminController@uploadItem');
+
         Route::get('twitterLogout', 'AdminController@twitterLogout');
     });
 

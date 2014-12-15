@@ -13,7 +13,7 @@
         <article>
             <div class="hero_cover">
                 <div class="hero_img">
-                    {{HTML::image($data['article']->media->url, $data['article']->media->title, ['class' => 'img'])}}
+                    {{HTML::image('uploads/originals/' . $data['article']->media->url, $data['article']->media->title, ['class' => 'img'])}}
                 </div>
                 <div class="center">
                     <div class="header">

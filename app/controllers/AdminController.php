@@ -63,13 +63,13 @@ class AdminController extends BaseController{
 
                 $media = new Media;
                 $media->title = $file->getClientOriginalName();
-                $media->url = $this->originals_path . $name;
-                $media->thumbnail = $this->thumbnails_path . $name;
+                $media->url = $name;
                 $media->type = 'image';
                 if($media->save()):
                     $article = new Article;
                     $article->title = Input::get('title');
                     $article->slug = Str::slug(Input::get('title'));
+                    $article->short = Input::get('short');
                     $article->content = Input::get('content');
                     $article->media_id = $media->id;
                     $article->user_id = Auth::user()->id;
@@ -98,22 +98,22 @@ class AdminController extends BaseController{
                 return Redirect::to('admin/article/' . $id);
             else:
                 if(Input::hasFile('bg')):
-                    // $destination = base_path() . '/uploads/originals/';
-                    // $file = Input::file('bg');
-                    // $name = time() . '.' . $file->getClientOriginalExtension();
-                    // $file->move($destination, $name);
+                    $destination = base_path() . $this->originals_path;
+                    $file = Input::file('bg');
+                    $name = time() . '.' . $file->getClientOriginalExtension();
+                    $file->move($destination, $name);
 
-                    // Image::make(base_path() . '/uploads/originals/' . $name)->fit(250)->save(base_path() . '/uploads/thumbnails/' . $name);
+                    Image::make(base_path() . $this->originals_path . $name)->fit(250)->save(base_path() . $this->thumbnails_path . $name);
 
-                    // $media = new Media;
-                    // $media->title = $file->getClientOriginalName();
-                    // $media->original_bg = 'uploads/originals/' . $name;
-                    // $media->thumbnail_bg = 'uploads/thumbnails/' . $name;
-                    // $media->type = 'image';
-                    // $media->save();
+                    $media = new Media;
+                    $media->title = $file->getClientOriginalName();
+                    $media->url = $name;
+                    $media->type = 'image';
+                    $media->save();
                 endif;
                 $article->title = Input::get('title');
                 $article->slug = Str::slug(Input::get('title'));
+                $article->short = Input::get('short');
                 $article->content = Input::get('content');
                 if(isset($media)) $article->media_id = $media->id;
                 $article->save();
@@ -128,6 +128,37 @@ class AdminController extends BaseController{
             $article->delete();
         endif;
         return Redirect::to('admin/articles');
+    }
+
+    public function uploadItem(){
+        if(Input::hasFile('item')):
+            $destination = base_path() . $this->originals_path;
+            $file = Input::file('item');
+            $name = time() . '.' . $file->getClientOriginalExtension();
+            $file->move($destination, $name);
+
+            Image::make(base_path() . $this->originals_path . $name)
+                ->resize(null, 80, function ($constraint) {
+                            $constraint->aspectRatio();
+                            $constraint->upsize();
+                        })
+                ->save(base_path() . $this->thumbnails_path . $name);
+
+            $media = new Media;
+            $media->title = $file->getClientOriginalName();
+            $media->url = $name;
+            $media->type = 'image';
+            $media->save();
+
+            $response = [
+                'title' => $media->title,
+                'url' => $media->url,
+                'type' => $media->type
+            ];
+
+            return Response::json($response, 200);
+
+        endif;
     }
 
     public function twitterLogin(){

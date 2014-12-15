@@ -13,6 +13,7 @@
         <?php
         $action = ['AdminController@updateArticle', $article->id];
         $title = $article->title;
+        $short = $article->short;
         $content = $article->content;
         $img = $article->media;
         ?>
@@ -20,6 +21,7 @@
         <?php
         $action = 'AdminController@saveArticle';
         $title = Input::old('title');
+        $short = Input::old('short');
         $content = Input::old('content');
         ?>
     @endif
@@ -30,16 +32,33 @@
             {{Form::text('title', $title, ['required' => 'required', 'placeholder' => 'Title', 'class' => 'text'])}}
         </div><!-- /group -->
         <div class="group">
-            {{Form::textarea('content', $content, ['required' => 'required', 'placeholder' => 'Content', 'class' => 'textarea'])}}
+            {{Form::text('short', $short, ['required' => 'required', 'placeholder' => 'Short description', 'class' => 'text'])}}
+        </div><!-- /group -->
+        <div class="group">
+            {{Form::textarea('content', $content, ['required' => 'required', 'placeholder' => 'Content', 'class' => 'textarea article_content'])}}
+        </div><!-- /group -->
+        <div class="group">
+            <ul class="drop_file clear">
+                Uploads
+                <i class="fa fa-upload"></i>
+                {{Form::file('item', ['class' => 'file item'])}}
+                <div class="file_preview">
+                    <ul class="uploads">
+                        <li class="item">
+                            {{HTML::image('assets/img/profile.jpg', 'alt', ['class' => 'img'])}}
+                        </li>
+                    </ul><!-- /uploads -->
+                </div><!-- /file_preview -->
+            </ul><!-- /uploads -->
         </div><!-- /group -->
         <div class="group">
             <div class="drop_file clear">
                 Background
                 <i class="fa fa-upload"></i>
-                {{Form::file('bg', ['class' => 'file'])}}
+                {{Form::file('bg', ['class' => 'file bg'])}}
                 <div class="file_preview">
                     @if (isset($img))
-                        {{HTML::image($img->url, $img->title, ['class' => 'img'])}}
+                        {{HTML::image('uploads/originals/' . $img->url, $img->title, ['class' => 'img'])}}
                     @endif
                 </div><!-- /file_preview -->
             </div><!-- /drop_file -->

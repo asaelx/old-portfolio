@@ -300,7 +300,6 @@ body {
       color: #2980B9; }
   .article .content img {
     border-radius: 0.21429em;
-    box-shadow: 0 0 0.21429em 0 rgba(52, 73, 94, 0.7);
     max-width: 100%; }
   .article .content ul, .article .content ol {
     border-left: 0.14286em solid #ECF0F1;
