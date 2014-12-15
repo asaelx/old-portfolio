@@ -27,6 +27,17 @@
     @endif
     <section id="article" class="content center clear">
         <h1 class="title clear">Article <a href="{{URL::to('admin/articles')}}" class="btn blue-btn"><i class="fa fa-arrow-left"></i> Go back</a></h1>
+        @if ($errors->has())
+
+            @foreach ($errors->all() as $error)
+                <ul class="errors">
+                    <li class="error">
+                        {{ $error }}
+                    </li>
+                </ul><!-- /errors -->
+            @endforeach
+
+        @endif
         {{Form::open(['action' => $action, 'class' => 'article_form form', 'autocomplete' => 'off', 'files' => true])}}
         <div class="group">
             {{Form::text('title', $title, ['required' => 'required', 'placeholder' => 'Title', 'class' => 'text'])}}
@@ -44,9 +55,6 @@
                 {{Form::file('item', ['class' => 'file item'])}}
                 <div class="file_preview">
                     <ul class="uploads">
-                        <li class="item">
-                            {{HTML::image('assets/img/profile.jpg', 'alt', ['class' => 'img'])}}
-                        </li>
                     </ul><!-- /uploads -->
                 </div><!-- /file_preview -->
             </ul><!-- /uploads -->

@@ -42,8 +42,10 @@ class AdminController extends BaseController{
         $all = Input::all();
 
         $rules = [
-            'title' => 'required',
-            'content' => 'required'
+            'title' => 'required|unique:articles',
+            'short' => 'required|unique:articles',
+            'content' => 'required',
+            'bg' => 'required'
         ];
 
         $validator = Validator::make($all, $rules);
@@ -87,7 +89,8 @@ class AdminController extends BaseController{
             $all = Input::all();
 
             $rules = [
-                'title' => 'required',
+                'title' => 'required|unique:articles',
+                'short' => 'required|unique:articles',
                 'content' => 'required'
             ];
 

@@ -235,6 +235,15 @@ body{
     }
 }
 
+/* Errors */
+
+.errors{
+    .error{
+        color: $red;
+    }
+}
+
+
 /* Form */
 .form{
     .group{

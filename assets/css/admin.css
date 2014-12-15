@@ -158,6 +158,10 @@ body {
 #settings .btn {
   font-size: 1.14286em; }
 
+/* Errors */
+.errors .error {
+  color: #E74C3C; }
+
 /* Form */
 .form .group {
   margin: 1.07143em 0;
