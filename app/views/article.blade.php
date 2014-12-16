@@ -24,6 +24,14 @@
             </div><!-- /hero_cover -->
             <div class="content center">
                 {{Markdown::parse($data['article']->content)}}
+                <ul class="share">
+                    <li class="item">
+                        <a href="" class="twitter link"><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="item">
+                        <a href="" class="facebook link"><i class="fa fa-facebook"></i></a>
+                    </li>
+                </ul><!-- /share -->
             </div><!-- /content -->
         </article>
     </section><!-- /article -->

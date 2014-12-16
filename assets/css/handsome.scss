@@ -359,7 +359,7 @@ $sidebar_width: em(220px);
         font-weight: 500;
         line-height: em(30px);
         margin: 2em auto;
-
+        position: relative;
         /* Headings */
         $start: 2.8em;
         @each $h in h1, h2, h3, h4, h5, h6{
@@ -417,6 +417,24 @@ $sidebar_width: em(220px);
         }
         ol{
             list-style: decimal;
+        }
+        .share{
+            border: 0;
+            font-size: em(18px);
+            padding: 0;
+            position: absolute;
+            top: 0;
+            right: em(-15px);
+            list-style: none;
+            .link{
+                color: $blue;
+            }
+            .twitter{
+
+            }
+            .facebook{
+
+            }
         }
     }
 }

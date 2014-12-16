@@ -269,6 +269,7 @@ body {
   font-weight: 500;
   line-height: 2.14286em;
   margin: 2em auto;
+  position: relative;
   /* Headings */ }
   .article .content h1 {
     font-size: 2.8em; }
@@ -319,6 +320,16 @@ body {
     list-style: disc; }
   .article .content ol {
     list-style: decimal; }
+  .article .content .share {
+    border: 0;
+    font-size: 1.28571em;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: -1.07143em;
+    list-style: none; }
+    .article .content .share .link {
+      color: #3498DB; }
 
 .center {
   margin: 0 auto;
